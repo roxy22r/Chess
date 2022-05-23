@@ -1,4 +1,4 @@
+from Piece import Piece
 
-class Knight:
 
-    def __init__(self):
+class Knight(Piece):

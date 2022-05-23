@@ -1,4 +1,4 @@
+from Piece import Piece
 
-class Bishop:
 
-    def __init__(self):
+class Bishop(Piece):
