@@ -2,8 +2,8 @@ from Piece import Piece
 
 
 class Pawn(Piece):
-    def __init__(self, name, color, rowPos, colPos):
-        self.name = name
+    name = "P"
+    def __init__(self, color, rowPos, colPos):
         self.color = color
         self.rowPos = rowPos
         self.colPos = colPos
