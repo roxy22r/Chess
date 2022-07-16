@@ -41,7 +41,7 @@ class Board:
                     print()
 
     def setAllPiece(self):
-        self.setAllPawn(self)
+        self.setAllPawn()
 
     def setAllPawn(self):
         for col in range(self.cols):
