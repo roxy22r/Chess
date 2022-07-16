@@ -1,8 +1,9 @@
 from Piece import Piece
 
 
-class Queen(Piece):
-    name = "Q"
+class King(Piece):
+    name = "?"
+
     def __init__(self, color, rowPos, colPos):
         self.color = color
         self.rowPos = rowPos

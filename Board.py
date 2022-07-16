@@ -4,9 +4,12 @@ import numpy
 import numpy as np
 from Cell import Cell
 
+from Bishop import Bishop
+from King import King
 from Knight import Knight
 from Pawn import Pawn
 from Piece import Piece
+from Queen import Queen
 from Rook import Rook
 
 
@@ -28,7 +31,7 @@ class Board:
         elif (row % 2) == 0 & (col % 2) == 1:
             self.board[row, col] = Cell("[ ]", None)
         else:
-            self.board[row, col] = Cell("#", None)
+            self.board[row, col] = Cell("|@|", None)
 
     def printBoard(self):
         print()
@@ -38,14 +41,17 @@ class Board:
                 if None != cell.piece:
                     print("[ " + cell.piece.name, end='] ')
                 else:
-                    print("  " + cell.color, end=' ')
+                    print("" + cell.color, end='  ')
                 if col == 7:
                     print()
 
     def setAllPiece(self):
         self.setAllPawn()
+        self.setRook()
         self.setKings()
         self.setKnight()
+        self.setBishop()
+        self.setQueen()
 
     def setAllPawn(self):
         for col in range(self.cols):
@@ -54,7 +60,7 @@ class Board:
             cellWhite.setPiece(Pawn("#", 1, col))
             cellBlack.setPiece(Pawn("[ ]", 6, col))
 
-    def setKings(self):
+    def setRook(self):
         cellWhiteRook: Cell = self.board[0, 0]
         cellBlackRook: Cell = self.board[7, 0]
         cellWhiteRookOne: Cell = self.board[0, 7]
@@ -71,8 +77,31 @@ class Board:
         cellBlackKnightOne: Cell = self.board[7, 6]
         cellWhiteKnight.setPiece(Knight("#", 0, 1))
         cellBlackKnight.setPiece(Knight("[ ]", 7, 1))
-        cellWhiteKnightOne.setPiece(Knight("#", 0, 6 ))
+        cellWhiteKnightOne.setPiece(Knight("#", 0, 6))
         cellBlackKnightOne.setPiece(Knight("[ ]", 7, 6))
+
+    def setBishop(self):
+        cellWhiteKnight: Cell = self.board[0, 2]
+        cellBlackKnight: Cell = self.board[7, 2]
+        cellWhiteKnightOne: Cell = self.board[0, 5]
+        cellBlackKnightOne: Cell = self.board[7, 5]
+        cellWhiteKnight.setPiece(Bishop("#", 0, 2))
+        cellBlackKnight.setPiece(Bishop("[ ]", 7, 2))
+        cellWhiteKnightOne.setPiece(Bishop("#", 0, 5))
+        cellBlackKnightOne.setPiece(Bishop("[ ]", 7, 5))
+
+    def setQueen(self):
+        cellWhiteKnight: Cell = self.board[0, 3]
+        cellBlackKnight: Cell = self.board[7, 3]
+        cellWhiteKnight.setPiece(Queen(" # ", 0, 3))
+        cellBlackKnight.setPiece(Queen("[ ]", 7, 3))
+
+    def setKings(self):
+        cellWhiteKnight: Cell = self.board[0, 4]
+        cellBlackKnight: Cell = self.board[7, 4]
+        cellWhiteKnight.setPiece(King("#", 0, 4))
+        cellBlackKnight.setPiece(King("[ ]", 7, 4))
+
 
 board = Board()
 board.printBoard()
