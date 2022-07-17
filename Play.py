@@ -5,6 +5,7 @@ import Piece
 
 
 class Play:
+
     def __init__(self, board: Board):
         self.board = board
 
@@ -16,4 +17,4 @@ class Play:
             print("Please Enter Col Number")
             col = input()
             piece: Piece = self.board[row][col]
-            self.board[row][col]: Piece = None
+            self.board[row][col]: Piece.Piece = None
