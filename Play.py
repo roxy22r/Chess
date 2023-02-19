@@ -12,9 +12,12 @@ class Play:
     def play(self):
         end: bool = True
         while end:
-            print("Please Enter Row Number")
-            row = input()
-            print("Please Enter Col Number")
-            col = input()
-            piece: Piece = self.board[row][col]
-            self.board[row][col]: Piece.Piece = None
+            print()
+            row = int(input("Please enter row number of piece"))
+            col = int(input("Please enter col number of piece"))
+            cell: Cell = self.board.getCell(row, col)
+            piece: Piece = cell.piece
+            cell.setPiece(None)
+            print("You choose", piece.name, "to move")
+            row = int(input("Please enter row number to move"))
+            col = int(input("Please enter col number to move"))

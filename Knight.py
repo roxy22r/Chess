@@ -9,3 +9,6 @@ class Knight(Piece):
         self.rowPos = rowPos
         self.colPos = colPos
         pass
+
+    def rule(self, row, col) -> bool:
+        return False

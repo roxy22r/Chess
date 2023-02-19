@@ -100,3 +100,5 @@ class Board:
         cellBlackKnight: Cell = self.board[6, 4]
         cellWhiteKnight.setPiece(King("#", 0, 4))
         cellBlackKnight.setPiece(King("[ ]", 6, 4))
+    def getCell(self,row:int,coll:int)->Cell:
+        return self.board[row][coll]

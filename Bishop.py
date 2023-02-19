@@ -10,3 +10,5 @@ class Bishop(Piece):
         self.colPos = colPos
         pass
 
+    def rule(self, row, col) -> bool:
+        return False
