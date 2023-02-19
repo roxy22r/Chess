@@ -11,4 +11,6 @@ class Knight(Piece):
         pass
 
     def rule(self, row, col) -> bool:
-        return False
+        return self.rowPos + 2 == row and self.colPos - 1 == col or self.rowPos - 2 == row and self.colPos - 1 == col or \
+        self.rowPos + 2 == row and self.colPos + 1 == col or self.rowPos - 2 == row and self.colPos + 1 == col
+
