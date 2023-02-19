@@ -17,6 +17,6 @@ class TestPawn(TestCase):
 
     def test_pawnMovesTwoRowForwardInSecondTurn_false(self):
         testee = Pawn("#", 1, 1)
-        self.testee.rule(3, 1)
+        testee.rule(3, 1)
         result = testee.rule(5, 1)
         self.assertFalse(result)
