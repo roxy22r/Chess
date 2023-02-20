@@ -1,4 +1,5 @@
 from Piece import Piece
+from math import factorial
 
 
 class Bishop(Piece):
@@ -11,4 +12,8 @@ class Bishop(Piece):
         pass
 
     def rule(self, row, col) -> bool:
-        return False
+        return self.rowPos - row == self.colPos - col or row - self.rowPos == col - self.colPos or self.rowPos - row == col - self.colPos or row-self.colPos == self.colPos - col
+
+    def t(self):
+        number = factorial(3)
+        print(number)
