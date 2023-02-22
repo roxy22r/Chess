@@ -13,7 +13,3 @@ class Bishop(Piece):
 
     def rule(self, row, col) -> bool:
         return self.rowPos - row == self.colPos - col or row - self.rowPos == col - self.colPos or self.rowPos - row == col - self.colPos or row-self.colPos == self.colPos - col
-
-    def t(self):
-        number = factorial(3)
-        print(number)
