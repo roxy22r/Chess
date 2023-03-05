@@ -13,3 +13,9 @@ class Piece(ABC):
     def rule(self, row, col) -> bool:
         ''' To override '''
         pass
+
+    @abstractmethod
+    def ruleException(self, row, col, isOppositeColorOnPos) -> bool:
+        ''' To override '''
+        pass
+
