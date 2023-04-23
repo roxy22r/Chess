@@ -2,7 +2,13 @@ from Piece import Piece
 
 
 class Rook(Piece):
-    name = "R"
+    def wrongMoveText(self) -> str:
+        pass
+
+    def ruleException(self, row, col, isOppositeColorOnPos) -> bool:
+        return  False
+
+    name = u"\u2656"
 
     def __init__(self, color, rowPos:int, colPos:int):
         self.color = color

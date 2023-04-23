@@ -24,13 +24,13 @@ class Board:
     def setCellColor(self, row, col):
 
         if (row % 2) == 1 & (col % 2) == 0:
-            self.board[row, col] = Cell(None, "[ ]")
+            self.board[row, col] = Cell(None, "[  ]")
         elif (row % 2) == 1 & (col % 2) == 1:
-            self.board[row, col] = Cell(None, "[ ]")
+            self.board[row, col] = Cell(None, "[  ]")
         elif (row % 2) == 0 & (col % 2) == 1:
-            self.board[row, col] = Cell(None, "[ ]")
+            self.board[row, col] = Cell(None, "[  ]")
         else:
-            self.board[row, col] = Cell(None, "|@|")
+            self.board[row, col] = Cell(None, u"[\u25A0]")
 
     def printBoard(self):
         print()
@@ -43,6 +43,7 @@ class Board:
                     print("" + cell.color, end='  ')
                 if col == 7:
                     print()
+
 
     def setAllPiece(self):
         self.setAllPawn()

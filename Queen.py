@@ -2,7 +2,8 @@ from Piece import Piece
 
 
 class Queen(Piece):
-    name = "Q"
+
+    name = u"\u2655"
 
     def __init__(self, color, rowPos, colPos):
         self.color = color
@@ -21,3 +22,9 @@ class Queen(Piece):
 
     def __isDiogonaAllowed(self, row, col) -> bool:
         return self.rowPos - row == self.colPos - col or row - self.rowPos == col - self.colPos or self.rowPos - row == col - self.colPos or row - self.colPos == self.colPos - col
+
+    def wrongMoveText(self) -> str:
+        return  "The Queen can walk in every direction"
+
+    def ruleException(self, row, col, isOppositeColorOnPos) -> bool:
+        return  False

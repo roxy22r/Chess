@@ -2,7 +2,7 @@ from Piece import Piece
 
 
 class King(Piece):
-    name = "?"
+    name = u"\u2654"
 
     def __init__(self, color, rowPos, colPos):
         self.color = color
@@ -11,7 +11,7 @@ class King(Piece):
         pass
 
     def rule(self, row, col) -> bool:
-        return self.__isHoritontalAllowed(row, col) or self.__isVerticalAllowed(row,col) or \
+        return self.__isHoritontalAllowed(row, col) or self.__isVerticalAllowed(row, col) or \
                self.__isDiogonalLeftAllowed(row, col) or self.__isDiogonalRightAllowed(row, col)
 
     def __isVerticalAllowed(self, row, col) -> bool:
@@ -24,4 +24,10 @@ class King(Piece):
         return self.rowPos - 1 == row and self.colPos - 1 == col or self.rowPos + 1 == row and self.colPos - 1 == col
 
     def __isDiogonalRightAllowed(self, row, col) -> bool:
-        return self.rowPos - 1 == row and self.colPos +1 == col or self.rowPos + 1 == row and self.colPos + 1 == col
+        return self.rowPos - 1 == row and self.colPos + 1 == col or self.rowPos + 1 == row and self.colPos + 1 == col
+
+    def ruleException(self, row, col, isOppositeColorOnPos) -> bool:
+        return False
+
+    def wrongMoveText(self) -> str:
+        return "The King can only move one in any direction"

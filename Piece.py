@@ -19,3 +19,7 @@ class Piece(ABC):
         ''' To override '''
         pass
 
+    @abstractmethod
+    def wrongMoveText(self) -> str:
+        ''' To override '''
+        pass

@@ -3,7 +3,8 @@ from Piece import Piece
 
 class Pawn(Piece):
     isFirstMoveDone = False
-    name = "P"
+    name = u"\u2659"
+    nameB = u"\u265F"
 
     def __init__(self, color, rowPos, colPos):
         self.color = color
@@ -19,3 +20,6 @@ class Pawn(Piece):
     def ruleException(self, row, col, isOppositeColorOnPos) -> bool:
         return (row - self.rowPos) == 1 and (col - self.colPos) == 1 and isOppositeColorOnPos or \
                (row - self.rowPos) == 1 and (self.colPos - col) == 1
+
+    def wrongMoveText(self) -> str:
+        return "You can Only move two forward in the beginning"
